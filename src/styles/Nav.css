@@ -12,3 +12,7 @@ nav {
   align-items: center;
   list-style: none;
 }
+
+a, a:active {
+  color: black;
+}
