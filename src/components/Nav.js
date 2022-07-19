@@ -1,20 +1,27 @@
 import "../styles/Nav.css";
 import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ getCount }) => {
   return (
     <nav>
-      <Link to="/">
-        <h3>Title</h3>
+      <Link className="nav-link" to="/">
+        <h1>Shopping Cart</h1>
       </Link>
       <ul className="nav-links">
-        <Link to="/">
+        <Link className="nav-link" to="/">
           <li>Home</li>
         </Link>
-        <Link to="/shop">
+        <Link className="nav-link" to="/shop">
           <li>Shop</li>
         </Link>
-        <li>Cart</li>
+        <Link className="nav-link" to="/cart">
+          <li>{
+          getCount() > 0 ?
+          <span>Cart ({getCount()})</span>:
+          <span>Cart</span>
+          }
+          </li>
+        </Link>
       </ul>
     </nav>
   )
