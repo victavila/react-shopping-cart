@@ -1,0 +1,15 @@
+.shop-link, .shop-link:active {
+  color: #000;
+  text-decoration: none;
+}
+
+.shop-link > div {
+  border: 1.5px solid #852614;
+  font-size: 1.5rem;
+  width: 12rem;
+  position: absolute;
+  top: 60%;
+  left: 55%;
+  text-align: center;
+}
+

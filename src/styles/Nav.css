@@ -1,18 +1,31 @@
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   min-height: 10vh;
+  padding-left: 20px;
+  padding-right: 30px;
+  background-color: #852614;
 }
 
 .nav-links {
   width: 40%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   list-style: none;
 }
 
-a, a:active {
-  color: black;
+h1 {
+  font-size: 2rem;
+  color: #eeeeee;
+}
+
+.nav-link, .nav-link:active {
+  color: #eeeeee;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  border-bottom: #eeeeee solid 2px;
 }
