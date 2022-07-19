@@ -73,10 +73,10 @@ const App = () => {
       <div className="App">
         <Nav getCount={getCartCount} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/shop/:id" element={<ProductDetail onAdd={addToCart} />} />
-          <Route path="/cart" element={<Cart cartItems={cartItems} onIncrement={incrementCount} onDecrement={decrementCount} getCartTotal={getCartTotal} onRemove={removeFromCart} />} />
+          <Route path="/shopping-cart/" element={<Home />} />
+          <Route path="/shopping-cart/shop" element={<Shop />} />
+          <Route path="/shopping-cart/shop/:id" element={<ProductDetail onAdd={addToCart} />} />
+          <Route path="/shopping-cart/cart" element={<Cart cartItems={cartItems} onIncrement={incrementCount} onDecrement={decrementCount} getCartTotal={getCartTotal} onRemove={removeFromCart} />} />
         </Routes>
       </div>
     </BrowserRouter>
