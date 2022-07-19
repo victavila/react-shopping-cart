@@ -39,16 +39,15 @@ const Shop = () => {
   
   return (
     <div className="shop">
-      <h2>Shop</h2>
       <div className="categories">
         <div className="category-buttons">
-          <button onClick={mensButtonClicked}>Men's Clothing</button>
-          <button onClick={womensButtonClicked}>Women's Clothing</button>
-          <button onClick={jewelryButtonClicked}>Jewelry</button>
-          <button onClick={electronicsButtonClicked}>Electronics</button>
+          <button className={category === "men's clothing" ? "active category-button": "category-button"} onClick={mensButtonClicked}>Men's Clothing</button>
+          <button className={category === "women's clothing" ? "active category-button": "category-button"} onClick={womensButtonClicked}>Women's Clothing</button>
+          <button className={category === "jewelery" ? "active category-button": "category-button"} onClick={jewelryButtonClicked}>Jewelry</button>
+          <button className={category === "electronics" ? "active category-button": "category-button"} onClick={electronicsButtonClicked}>Electronics</button>
         </div>
       </div>
-      <div className="products-grid">
+      <div className="products">
         {products.map(product => (
           product.category === category ? (<ProductPreview key={product.id} product={product} />):
           null

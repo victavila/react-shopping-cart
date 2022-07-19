@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from "react";
 import { useParams } from "react-router-dom"
+import "../styles/ProductDetail.css"
 
 const ProductDetail = ({onAdd}) => {
   const [product, setProduct] = useState({});
@@ -17,22 +18,31 @@ const ProductDetail = ({onAdd}) => {
     fetchProduct();
   },[id])
 
+  const ratingStars = [];
+
+  for (let i = 0; i < Math.round(product.rate); i++) {
+    ratingStars.push(<span key={i} className="fa fa-star checked"></span>);
+  }
+  for (let i = 0; i < 5 - Math.round(product.rate); i++) {
+    ratingStars.push(<span key={Math.random()} className="fa fa-star"></span>);
+  }
+
   return (
     product !== null ?
     <div className="product">
-    <div className="left">
-      <img src={product.image} alt={product.name}></img>
-    </div>
-    <div className="right">
-      <h3 className="name">{product.name}</h3>
-      <div className="rating">
-        <p>{product.rate}</p>
-        <p>{product.ratings} ratings</p>
+      <div className="left">
+        <img src={product.image} alt={product.name}></img>
       </div>
-      <h4>${product.price}</h4>
-      <p>{product.description}</p>
+      <div className="right">
+        <h3 className="name">{product.name}</h3>
+        <div className="rating">
+          <p>{ratingStars}</p>
+          <p>{product.ratings} ratings</p>
+        </div>
+        <p>${product.price}</p>
+        <p>{product.description}</p>
+        <button onClick={() => {onAdd(product)}}>Add to Cart</button>
       </div>
-      <button onClick={() => {onAdd(product)}}>Add</button>
     </div>:
     <div></div>
   )

@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 
 const ProductPreview = ({product}) => {
   return (
-    <Link to={`/shop/${product.id}`}>
+    <Link className="product-link" to={`/shop/${product.id}`}>
       <div className="product-preview">
         <img src={product.image} alt={product.name}></img>
-        <h3>{product.name}</h3>
-        <h4>{product.price}</h4>
+        <div className="product-info">
+          <h3>{product.name}</h3>
+          <p>${product.price}</p>
+        </div>
       </div>
     </Link>
   )
